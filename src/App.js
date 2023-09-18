@@ -24,12 +24,13 @@ export default class App {
 			let n = Math.floor(Math.random() * 6) + 1;
 			let c = couleur;
 			if (c === "a") {
-				let lesCouleurs = ["r", "v", "b"];
+				let lesCouleurs = ["r", "v", "b","j"];
 				let posCouleur = Math.floor(Math.random() * lesCouleurs.length);
 				c = lesCouleurs[posCouleur];
 			}
 			let img = table.appendChild(document.createElement("img"));
-			img.src = "images/d"+c+""+n+".svg";
+			img.src = "img/de_"+n+"_"+c+".svg";
+			img.style.transform = `translate(${Math.floor(Math.random() * 10)-5}px,${Math.floor(Math.random() * 10)-5}px) rotate(${Math.floor(Math.random() * 60)-30}deg)`
 		}
 	}
 	/**

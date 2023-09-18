@@ -1,0 +1,45 @@
+<svg width="160" height="160" version="1.1" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style>
+        :root {
+            --hue: 60;
+        }
+    </style>
+
+    <defs>
+        <filter id="ombre" x="-.11936" y="-.12189" width="1.2387" height="1.2438" color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="5" />
+        </filter>
+        <linearGradient id="cote" x1="16.58" x2="134.94" y1="134.94" y2="16.58" gradientUnits="userSpaceOnUse">
+            <stop style="stop-color:hsl(var(--hue), 100%, 60%)" offset="0" />
+            <stop style="stop-color:hsl(var(--hue), 100%, 30%)" offset="0.1" />
+            <stop style="stop-color:hsl(var(--hue), 100%, 10%)" offset="0.5" />
+            <stop style="stop-color:hsl(var(--hue), 100%, 30%)" offset="0.9" />
+            <stop style="stop-color:hsl(var(--hue), 100%, 60%)" offset="1" />
+        </linearGradient>
+        <filter id="rondeur" x="-.225" y="-.225" width="1.45" height="1.45" color-interpolation-filters="sRGB">
+            <feGaussianBlur in="SourceGraphic" result="result0" stdDeviation="6" />
+            <feDiffuseLighting lighting-color="rgb(255,255,255)" result="result5" surfaceScale="4">
+                <feDistantLight azimuth="235" elevation="45" />
+            </feDiffuseLighting>
+            <feComposite in="result5" in2="SourceGraphic" k1="1.4" operator="arithmetic" result="fbSourceGraphic" />
+            <feGaussianBlur in="fbSourceGraphic" result="result0" stdDeviation="6" />
+            <feSpecularLighting lighting-color="rgb(255,255,255)" in="result0" result="result1" specularExponent="25" surfaceScale="4">
+                <feDistantLight azimuth="235" elevation="45" />
+            </feSpecularLighting>
+            <feComposite in="fbSourceGraphic" in2="result1" k2="1" k3="1" operator="arithmetic" result="result4" />
+            <feComposite in="result4" in2="SourceGraphic" operator="in" result="result2" />
+        </filter>
+    </defs>
+    <path d="m40.603 26.613 91.698 0.77077c7.016 0.05897 13.154 5.7786 13.454 12.788 1.44 33.605-1.6049 61.534-1.2018 89.33 0.10171 7.0147-5.2366 12.695-12.253 12.695h-89.728c-7.051 0-12.8-5.6523-12.92-12.702l-1.5364-90.286c-0.11848-6.9624 5.5243-12.654 12.488-12.595z" fill-opacity=".4975" fill-rule="evenodd" filter="url(#ombre)" stop-color="#000000" stroke-width="2" />
+    <path d="m125.42 7.0566-118.36 118.36 13.523 5.7248c2.8076 1.1885 5.5018 2.8552 8.7993 2.8552h89.675c8.2799 0 14.946-6.6659 14.946-14.946v-89.675c0-3.2974-1.6667-5.9916-2.8552-8.7993z" fill="url(#cote)" />
+    <rect width="128" height="128" rx="16" ry="16" style="fill:hsl(var(--hue), 100%, 50%)" filter="url(#rondeur)" />
+    <g fill="#0008">
+        <circle cx="32" cy="32" r="14" />
+        <circle cx="96" cy="32" r="14" />
+        <!-- <circle cx="32" cy="64" r="14" /> -->
+        <circle cx="64" cy="64" r="14" />
+        <!-- <circle cx="96" cy="64" r="14" /> -->
+        <circle cx="32" cy="96" r="14" />
+        <circle cx="96" cy="96" r="14" />
+    </g>
+</svg>
